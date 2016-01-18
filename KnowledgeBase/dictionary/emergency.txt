@@ -1,0 +1,29 @@
+溺水急救$$emergency
+触电$$emergency
+雷击$$emergency
+低温$$emergency
+火灾$$emergency
+车祸$$emergency
+虫兽咬伤$$emergency
+毒蛇咬伤$$emergency
+呼吸道、消化道异物$$emergency
+食管异物$$emergency
+角膜异物(cornealforeignbody)$$emergency
+眼球挫伤$$emergency
+眼球化学伤$$emergency
+鼻出血$$emergency
+咯血$$emergency
+心肌梗塞$$emergency
+心绞痛$$emergency
+心跳骤停$$emergency
+骨折、损伤等急救$$emergency
+胸部外伤$$emergency
+腹部外伤$$emergency
+颅脑外伤$$emergency
+中暑$$emergency
+高热$$emergency
+惊厥$$emergency
+癫痫　$$emergency
+癔病　$$emergency
+昏厥$$emergency
+中毒急救常识$$emergency

@@ -1,0 +1,5 @@
+胸腔穿刺术$$diag_tech
+腹腔穿刺术$$diag_tech
+心包穿刺术$$diag_tech
+腰椎穿刺术$$diag_tech
+骨髓穿刺术$$diag_tech
