@@ -15,7 +15,6 @@ f = open("texts/diag_rule.txt","r",encoding='utf-8')
 # w = open("knowledgeBase/dictionary/diag_rule.txt","w",encoding='utf-8')
 
 content = []
-tag = 0
 
 line = f.readline()
 keyword = []
@@ -97,17 +96,29 @@ def insertMongo(cont):
     print(tech)
     # #print(keyword)
 
+tag = 0
 while line:
     if line == '\n':
         line = f.readline()
         continue
     if re.match(level1,line):
+        if(tag==1):
+            insertMongo(content)
+            type2=None
+            type3=None
+            content=None
+            tag=0
         type1 = re.match(level1,line).group(2)
         type1 = type1.replace(" ","")
         # print(type1)
         line = f.readline()
         continue
     if re.match(level2,line):
+        if(tag==1):
+            insertMongo(content)
+            type3=None
+            content=None
+            tag=0
         type2 = re.match(level2,line).group(2)
         type2 = type2.replace(" ","")
         # print(type2)
