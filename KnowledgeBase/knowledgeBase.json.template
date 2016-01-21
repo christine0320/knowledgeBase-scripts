@@ -1,7 +1,0 @@
-{
-	"dbHost": "192.168.10.108",
-	"dbPort": "27017",
-	"dbName": "knowledgeBase",
-	"dbUser": "root",
-	"dbPass": "111111"
-}
