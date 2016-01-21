@@ -5,7 +5,7 @@ import pinyin
 
 conn = MongoClient('192.168.10.108',27017)
 db = conn.knowledgeBase
-knowledgeBase = db.diag_rule
+knowledgeBase = db.knowledgeBase
 
 level1 = re.compile('^第(.*?)章+(.*)\n')
 level2 = re.compile('^第(.*?)节+(.*)\n')

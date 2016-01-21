@@ -5,7 +5,7 @@ import pinyin
 
 conn = MongoClient('192.168.10.108',27017)
 db = conn.knowledgeBase
-knowledgeBase = db.diag_ruless
+knowledgeBase = db.knowledgeBase
 
 level1 = re.compile('^第(.*?)章+(.*)\n')
 level2 = re.compile('^第(.*?)节+(.*)\n')
@@ -104,9 +104,9 @@ while line:
     if re.match(level1,line):
         if(tag==1):
             insertMongo(content)
-            type2=None
-            type3=None
-            content=None
+            type2=''
+            type3=''
+            content=[]
             tag=0
         type1 = re.match(level1,line).group(2)
         type1 = type1.replace(" ","")
@@ -116,8 +116,8 @@ while line:
     if re.match(level2,line):
         if(tag==1):
             insertMongo(content)
-            type3=None
-            content=None
+            type3=''
+            content=[]
             tag=0
         type2 = re.match(level2,line).group(2)
         type2 = type2.replace(" ","")
@@ -129,6 +129,7 @@ while line:
         if tag ==1:
             insertMongo(content)
         else:tag =1
+
         if len(content) != 0:
             content=[]
         type3 = line.replace('#','')

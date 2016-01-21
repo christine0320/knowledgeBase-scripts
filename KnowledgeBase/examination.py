@@ -7,11 +7,8 @@ conn = MongoClient('192.168.10.108',27017)
 db = conn.knowledgeBase
 knowledgeBase = db.knowledgeBase
 
-level1 = re.compile('^＃+(.*)\n')
-level2 = re.compile('【(.*)】+(.*)\n')
-level3 = re.compile('第(.*?)节+(.*)\n')
+level1 = re.compile('第(.*?)节+(.*)\n')
 content = []
-tag = 0
 f = open("./texts/examination.txt","r",encoding='utf-8')
 w = open("./dictionary/examination.txt","w",encoding='utf-8')
 line = f.readline()
@@ -89,32 +86,28 @@ def insertMongo(cont):
     #print(tech)
     #print(keyword)
 
+tag = 0
 while line:
     if line == '\n':
         line = f.readline()
         continue
-    if re.match(level3,line):
-        type1 = re.match(level3,line).group(2)
-        type1 = type1.replace(" ","")
-        print(type1)
-        line = f.readline()
-        continue
-    if '＃' in line:
-        if tag ==1:
+    if re.match(level1,line):
+        if(tag==1):
             insertMongo(content)
-        else:tag =1
-        if len(content) != 0:
+            type2=''
             content=[]
-        type2 = line.replace('＃','')
-        type2 = type2.replace(' ','')
-        print(type2)
-        tag = 1
+            tag=0
+        type1 = re.match(level1,line).group(2)
+        type1 = type1.replace(" ","")
+        # print(type1)
         line = f.readline()
         continue
+
     if '#' in line:
         if tag ==1:
             insertMongo(content)
         else:tag =1
+
         if len(content) != 0:
             content=[]
         type2 = line.replace('#','')
@@ -123,7 +116,10 @@ while line:
         tag = 1
         line = f.readline()
         continue
+
     if tag != 0:
         content.append(line)
     line = f.readline()
 insertMongo(content)
+f.close()
+# w.close()

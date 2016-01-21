@@ -135,6 +135,7 @@ TORCH感染的血清学检查$$laboratory
 癌胚抗原（CEA）检测$$laboratory
 EB病毒抗体检测$$laboratory
 IgG、IgA、IgM含量测定$$laboratory
+自身抗体──类风湿因子（RF）测定$$laboratory
 血清总蛋白（TP）测定双缩脲法（常规测定，标化测定）$$laboratory
 血清白蛋白（ALB）测定溴甲酚绿法$$laboratory
 血浆纤维蛋白原（FP）测定同双缩脲法$$laboratory
